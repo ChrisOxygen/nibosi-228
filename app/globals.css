@@ -126,22 +126,32 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 
-  a, button {
+  a,
+  button {
     @apply cursor-pointer;
   }
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @layer utilities {
-  .section-x-p {
+  .section-y-p {
     @apply py-20;
   }
 
