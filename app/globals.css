@@ -135,8 +135,17 @@
   }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @layer utilities {
   .section-x-p {
     @apply py-20;
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
   }
 }
