@@ -141,6 +141,12 @@
   }
 }
 
+@keyframes gold-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -157,5 +163,24 @@
 
   .animate-marquee {
     animation: marquee 20s linear infinite;
+  }
+
+  .gold-cta {
+    background: linear-gradient(
+      135deg,
+      #f5d060 0%,
+      #d4af37 25%,
+      #b8860b 50%,
+      #d4af37 75%,
+      #f5d060 100%
+    );
+    background-size: 300% 300%;
+    animation: gold-shift 4s ease infinite;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .gold-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px oklch(0.7 0.15 85 / 40%);
   }
 }
