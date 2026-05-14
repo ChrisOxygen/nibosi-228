@@ -3,13 +3,13 @@ import { FaGripLinesVertical } from "react-icons/fa6";
 
 const MarqueeItem = () => (
   <div className="flex items-center">
-    <span className="shrink-0 text-[#D4AF37] font-sans font-semibold">
+    <span className="shrink-0 text-primary-gold font-sans font-semibold">
       Pay ONLY When You Receive It
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
       <FaGripLinesVertical />
     </span>
-    <span className="shrink-0 text-[#D4AF37] font-sans font-semibold">
+    <span className="shrink-0 text-primary-gold font-sans font-semibold">
       FREE Delivery to Your Door
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
@@ -28,7 +28,7 @@ export default function ScrollHeaderCTA() {
           ))}
         </div>
       </div>
-      <Button className="shrink-0 rounded bg-[#D4AF37] text-black font-heading font-semibold hover:bg-[#D4AF37]/90">
+      <Button className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90">
         ORDER NOW
       </Button>
     </section>

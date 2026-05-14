@@ -66,8 +66,8 @@ export default function CountdownTimer() {
   ];
 
   return (
-    <div className="flex flex-col gap-1 w-full max-w-lg border-dashed border-4 border-[#D4AF37]">
-      <span className="w-full bg-[#D4AF37] text-2xl text-center text-black font-semibold">
+    <div className="flex flex-col gap-1 w-full max-w-lg border-dashed border-4 border-primary-gold">
+      <span className="w-full bg-primary-gold text-2xl text-center text-black font-semibold">
         Free shipping ends in
       </span>
       <div className="flex py-2 items-center justify-around">
@@ -76,7 +76,7 @@ export default function CountdownTimer() {
             <span className="font-semibold text-4xl text-white tabular-nums">
               {value}
             </span>
-            <span className="text-[#D4AF37] text-sm">{label}</span>
+            <span className="text-primary-gold text-sm">{label}</span>
           </div>
         ))}
       </div>
