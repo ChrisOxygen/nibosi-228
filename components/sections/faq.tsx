@@ -74,11 +74,11 @@ export default function FAQ() {
   return (
     <section className="section-y-p bg-[#1B1C1D]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
-        <div className="flex flex-col items-center gap-2">
-          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold text-center">
+        <div className="flex flex-col sm:items-center gap-2">
+          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold sm:text-center">
             Customer Questions & Answers
           </h2>
-          <span className="text-lg text-center font-semibold">
+          <span className="text-lg sm:text-center font-semibold">
             We&apos;ve answered the most common questions to help you make the
             best decision for your timepiece needs. Please send us a message on
             WhatsApp for any additional inquiries!
