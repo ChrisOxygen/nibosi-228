@@ -1,5 +1,9 @@
-import Link from "next/link";
+"use client";
+
+import { useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import { FaGripLinesVertical } from "react-icons/fa6";
 
 const MarqueeItem = () => (
@@ -20,6 +24,15 @@ const MarqueeItem = () => (
 );
 
 export default function ScrollHeaderCTA() {
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  function handleOrder() {
+    startTransition(() => {
+      router.push("/checkout");
+    });
+  }
+
   return (
     <section className="flex items-center p-3 gap-4 overflow-hidden border-b-2 border-white/20">
       {/* Marquee — lg and above only */}
@@ -44,11 +57,18 @@ export default function ScrollHeaderCTA() {
       </div>
 
       <Button
-        nativeButton={false}
-        render={<Link href="/checkout" />}
-        className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90"
+        onClick={handleOrder}
+        disabled={isPending}
+        className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90 gap-1.5 disabled:opacity-80"
       >
-        ORDER NOW
+        {isPending ? (
+          <>
+            <Spinner className="size-3.5 border-[1.5px] text-black" />
+            Loading...
+          </>
+        ) : (
+          "ORDER NOW"
+        )}
       </Button>
     </section>
   );

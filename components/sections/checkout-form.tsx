@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useTransition } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Spinner } from "@/components/ui/spinner";
 import { PRICING, formatNaira } from "@/constants/pricing";
 import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
 import { checkoutSchema, type CheckoutFormValues } from "@/validators/checkout";
@@ -78,6 +79,7 @@ export default function CheckoutForm() {
   const router = useRouter();
   const setOrder = useOrderStore((s) => s.setOrder);
   const orderData = useOrderStore((s) => s.orderData);
+  const [isPending, startTransition] = useTransition();
 
   const {
     register,
@@ -97,12 +99,14 @@ export default function CheckoutForm() {
   }, [orderData, reset]);
 
   function onSubmit(data: CheckoutFormValues) {
-    if (orderData && isSameData(data, orderData)) {
+    startTransition(() => {
+      if (orderData && isSameData(data, orderData)) {
+        router.push("/thank-you");
+        return;
+      }
+      setOrder(data);
       router.push("/thank-you");
-      return;
-    }
-    setOrder(data);
-    router.push("/thank-you");
+    });
   }
 
   return (
@@ -268,9 +272,17 @@ export default function CheckoutForm() {
 
             <button
               type="submit"
-              className="gold-cta w-full py-4 text-black font-heading font-semibold text-lg sm:text-xl rounded mt-2"
+              disabled={isPending}
+              className="gold-cta w-full py-4 text-black font-heading font-semibold text-lg sm:text-xl rounded mt-2 flex items-center justify-center gap-2.5 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              Place Your Order!!
+              {isPending ? (
+                <>
+                  <Spinner className="size-5 border-[2.5px] text-black" />
+                  Placing Order...
+                </>
+              ) : (
+                "Place Your Order!!"
+              )}
             </button>
           </form>
         </div>
