@@ -1,4 +1,5 @@
 import { FaCheck } from "react-icons/fa";
+import { GUARANTEE_ITEMS } from "@/constants/guarantee";
 
 export default function Guarantee() {
   return (
@@ -11,10 +12,10 @@ export default function Guarantee() {
       <div className="max-w-6xl mx-auto flex flex-col gap-10 items-center">
         <div className="relative z-10 flex flex-col items-center">
           <div className="flex flex-col items-center gap-2">
-            <h2 className=" font-semibold text-6xl text-primary-gold">
+            <h2 className="font-semibold text-6xl text-primary-gold">
               OUR GUARANTEE
             </h2>
-            <span className=" text-lg text-center font-semibold">
+            <span className="text-lg text-center font-semibold">
               We&apos;re so confident in Nibosi Ruby Prestige that we offer a
               full satisfaction guarantee, because we&apos;ve tested it
               thoroughly and it exceeds industry standards for this price point
@@ -25,24 +26,14 @@ export default function Guarantee() {
               We&apos;re offering:
             </span>
             <ul className="flex gap-2 flex-col">
-              <li className="flex  gap-2 items-start">
-                <span className="text-primary-gold mt-1 shrink-0">
-                  <FaCheck />
-                </span>
-                <span>60-day money-back guarantee</span>
-              </li>
-              <li className="flex  gap-2 items-start">
-                <span className="text-primary-gold mt-1 shrink-0">
-                  <FaCheck />
-                </span>
-                <span>FREE return shipping if not satisfied</span>
-              </li>
-              <li className="flex  gap-2 items-start">
-                <span className="text-primary-gold mt-1 shrink-0">
-                  <FaCheck />
-                </span>
-                <span>Keep the golden bracelet regardless</span>
-              </li>
+              {GUARANTEE_ITEMS.map((item) => (
+                <li key={item} className="flex gap-2 items-start">
+                  <span className="text-primary-gold mt-1 shrink-0">
+                    <FaCheck />
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
           <h3 className="max-w-4xl text-primary-gold font-semibold text-center border-2 border-primary-gold p-6 text-4xl">
