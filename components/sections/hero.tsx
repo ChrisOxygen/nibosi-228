@@ -30,7 +30,7 @@ export default function Hero() {
           src={PRODUCT_IMAGES.HERO}
           width={2000}
           height={2000}
-          className="rounded-2xl aspect-video object-cover"
+          className="rounded aspect-square sm:aspect-video object-cover"
         />
       </div>
     </section>
