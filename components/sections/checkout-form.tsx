@@ -12,10 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { PRICING, formatNaira } from "@/constants/pricing";
 import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
-import {
-  checkoutSchema,
-  type CheckoutFormValues,
-} from "@/validators/checkout";
+import { checkoutSchema, type CheckoutFormValues } from "@/validators/checkout";
 
 const LINE_ITEMS = [
   { label: PRODUCT.WATCH_NAME, price: PRICING.WATCH },
@@ -110,24 +107,23 @@ export default function CheckoutForm() {
 
   return (
     <section className="bg-black py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8 items-start">
-
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8  items-start">
         {/* Left — product summary, sticky on lg+ */}
-        <div className="flex flex-col gap-6 lg:sticky lg:top-8">
+        <div className="flex flex-col justify-self-center w-full max-w-2xl lg:max-w-full gap-6 lg:sticky lg:top-8">
           <div className="p-1 flex w-full gap-1 items-stretch bg-primary-gold">
             <Image
               alt={PRODUCT.WATCH_NAME}
               src={PRODUCT_IMAGES.WATCH_PRICING}
               width={1000}
               height={1000}
-              className="h-[180px] sm:h-[220px] w-1/2 object-cover"
+              className="h-[180px] sm:h-[300px] w-1/2 object-cover"
             />
             <Image
               alt={PRODUCT.BRACELET_NAME}
               src={PRODUCT_IMAGES.BRACELET}
               width={1000}
               height={1000}
-              className="h-[180px] sm:h-[220px] w-1/2 object-cover"
+              className="h-[180px] sm:h-[300px] w-1/2 object-cover"
             />
           </div>
 
@@ -160,17 +156,28 @@ export default function CheckoutForm() {
         </div>
 
         {/* Right — form */}
-        <div className="bg-[#272724] rounded p-4 sm:p-6 flex flex-col gap-5">
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+        <div className="bg-[#272724] max-w-3xl w-full lg:max-w-full justify-self-center rounded p-4 sm:p-6 flex flex-col gap-5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-5"
+          >
             <FieldWrapper>
               <GoldLabel htmlFor="firstName">First Name *</GoldLabel>
-              <Input id="firstName" {...register("firstName")} className={INPUT_CLASS} />
+              <Input
+                id="firstName"
+                {...register("firstName")}
+                className={INPUT_CLASS}
+              />
               <FieldError message={errors.firstName?.message} />
             </FieldWrapper>
 
             <FieldWrapper>
               <GoldLabel htmlFor="lastName">Last Name</GoldLabel>
-              <Input id="lastName" {...register("lastName")} className={INPUT_CLASS} />
+              <Input
+                id="lastName"
+                {...register("lastName")}
+                className={INPUT_CLASS}
+              />
               <FieldError message={errors.lastName?.message} />
             </FieldWrapper>
 
@@ -237,7 +244,9 @@ export default function CheckoutForm() {
             </FieldWrapper>
 
             <FieldWrapper>
-              <GoldLabel htmlFor="deliveryAddress">Delivery Address *</GoldLabel>
+              <GoldLabel htmlFor="deliveryAddress">
+                Delivery Address *
+              </GoldLabel>
               <Textarea
                 id="deliveryAddress"
                 rows={4}
@@ -249,7 +258,11 @@ export default function CheckoutForm() {
 
             <FieldWrapper>
               <GoldLabel htmlFor="state">State</GoldLabel>
-              <Input id="state" {...register("state")} className={INPUT_CLASS} />
+              <Input
+                id="state"
+                {...register("state")}
+                className={INPUT_CLASS}
+              />
               <FieldError message={errors.state?.message} />
             </FieldWrapper>
 
@@ -261,7 +274,6 @@ export default function CheckoutForm() {
             </button>
           </form>
         </div>
-
       </div>
     </section>
   );
