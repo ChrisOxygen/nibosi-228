@@ -1,5 +1,9 @@
+"use client";
+
+import Link from "next/link";
 import { Button } from "../ui/button";
 import { FaGripLinesVertical } from "react-icons/fa6";
+import { useOrderStore } from "@/store/order";
 
 const MarqueeItem = () => (
   <div className="flex items-center">
@@ -19,6 +23,8 @@ const MarqueeItem = () => (
 );
 
 export default function ScrollHeaderCTA() {
+  const hasOrdered = useOrderStore((s) => s.hasOrdered);
+
   return (
     <section className="flex items-center p-3 gap-4 overflow-hidden border-b-2 border-white/20">
       {/* Marquee — lg and above only */}
@@ -42,7 +48,10 @@ export default function ScrollHeaderCTA() {
         Pay ONLY When You Receive It
       </div>
 
-      <Button className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90">
+      <Button
+        render={<Link href={hasOrdered ? "/thank-you" : "/checkout"} />}
+        className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90"
+      >
         ORDER NOW
       </Button>
     </section>
