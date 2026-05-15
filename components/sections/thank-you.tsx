@@ -69,7 +69,7 @@ export default function ThankYou() {
         </div>
 
         {/* WhatsApp CTA */}
-        <p className="text-white/80 text-base sm:text-lg text-center">
+        <p className="text-white/80 text-base sm:text-lg ">
           Your package is ready — want it at your doorstep{" "}
           <span className="text-primary-gold font-semibold">
             before the day is over?
@@ -86,8 +86,8 @@ export default function ThankYou() {
           className="whatsapp-pulse group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-[#25D366] px-6 py-6 text-white hover:shadow-[0_12px_40px_rgba(37,211,102,0.45)]"
         >
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none" />
-          <FaWhatsapp className="text-5xl sm:text-6xl shrink-0" />
-          <span className="font-heading capitalize font-bold text-2xl sm:text-3xl leading-tight">
+          <FaWhatsapp className="text-4xl sm:text-6xl shrink-0" />
+          <span className="font-heading capitalize font-bold text-xl sm:text-3xl leading-tight">
             I want my delivery today
           </span>
         </Link>
