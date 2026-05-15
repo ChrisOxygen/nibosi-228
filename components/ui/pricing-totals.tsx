@@ -3,7 +3,7 @@ import PricingCTA from "./pricing-cta";
 
 export default function PricingTotals() {
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col w-full items-center gap-4">
       <h3 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#808080] line-through text-center">
         Total Value: {formatNaira(PRICING.ORIGINAL)}
       </h3>
