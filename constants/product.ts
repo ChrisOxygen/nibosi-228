@@ -10,7 +10,14 @@ export const PRODUCT = {
   TAGLINE: "The Perfect Combination for the Modern Professional",
   PAY_ON_DELIVERY_SUBTITLE:
     "Ready to make your statement with the Nibosi Ruby Prestige? We deliver right to your doorstep in Lagos State, and you only pay when your presidential timepiece arrives safely in your hands",
+  LUCKY_NUMBER: 7,
+  DELIVERY_REGION: "Lagos State",
+  WHATSAPP_NUMBER: "2348000000000",
+  WHATSAPP_MESSAGE:
+    "Hi! I just placed an order for the Nibosi Ruby Prestige watch set and I'm ready for delivery today!",
 } as const;
+
+export const WHATSAPP_LINK = `https://wa.me/${PRODUCT.WHATSAPP_NUMBER}?text=${encodeURIComponent(PRODUCT.WHATSAPP_MESSAGE)}`;
 
 export const PRODUCT_IMAGES = {
   HERO: "/assets/nibosi-watch-gold-red-leather-wood.jpeg",

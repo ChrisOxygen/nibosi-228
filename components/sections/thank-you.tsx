@@ -2,14 +2,9 @@
 
 import Link from "next/link";
 import { useOrderStore } from "@/store/order";
-import { PRODUCT } from "@/constants/product";
+import { PRODUCT, WHATSAPP_LINK } from "@/constants/product";
+import { COPY } from "@/constants/copy";
 import { FaWhatsapp } from "react-icons/fa";
-
-const LUCKY_NUMBER = 7;
-const WHATSAPP_NUMBER = "2348000000000"; // replace with real number
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi! I just placed an order for the Nibosi Ruby Prestige watch set and I'm ready for delivery today!",
-)}`;
 
 function GoldRule() {
   return (
@@ -46,7 +41,7 @@ export default function ThankYou() {
         <div className="flex flex-col gap-1">
           <h1 className="font-heading font-bold text-4xl sm:text-5xl text-primary-gold leading-tight">
             Order Confirmed —<br />
-            You&apos;re Our Lucky #{LUCKY_NUMBER}!
+            You&apos;re Our Lucky #{PRODUCT.LUCKY_NUMBER}!
           </h1>
           <p className="font-semibold text-lg sm:text-xl text-white/90">
             Congratulations,{" "}
@@ -59,9 +54,9 @@ export default function ThankYou() {
           <p>
             You&apos;re officially our{" "}
             <span className="text-primary-gold font-semibold">
-              {LUCKY_NUMBER}th customer today
+              {PRODUCT.LUCKY_NUMBER}th customer today
             </span>{" "}
-            — and {LUCKY_NUMBER} has always been our lucky number. Since you hit
+            — and {PRODUCT.LUCKY_NUMBER} has always been our lucky number. Since you hit
             that magic spot, we&apos;re throwing in an{" "}
             <strong className="text-white">extra free gift</strong> with your{" "}
             {PRODUCT.NAME} order.
@@ -88,7 +83,7 @@ export default function ThankYou() {
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none" />
           <FaWhatsapp className="text-4xl sm:text-6xl shrink-0" />
           <span className="font-heading capitalize font-bold text-xl sm:text-3xl leading-tight">
-            I want my delivery today
+            {COPY.WHATSAPP_CTA_BUTTON}
           </span>
         </Link>
 

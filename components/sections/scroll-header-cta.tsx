@@ -5,17 +5,18 @@ import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { FaGripLinesVertical } from "react-icons/fa6";
+import { COPY } from "@/constants/copy";
 
 const MarqueeItem = () => (
   <div className="flex items-center">
     <span className="shrink-0 text-primary-gold font-sans font-semibold">
-      Pay ONLY When You Receive It
+      {COPY.MARQUEE_ITEM_1}
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
       <FaGripLinesVertical />
     </span>
     <span className="shrink-0 text-primary-gold font-sans font-semibold">
-      FREE Delivery to Your Door
+      {COPY.MARQUEE_ITEM_2}
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
       <FaGripLinesVertical />
@@ -46,14 +47,14 @@ export default function ScrollHeaderCTA() {
 
       {/* Static text — md only (hidden on sm and below, hidden on lg+) */}
       <div className="hidden md:flex lg:hidden flex-1 items-center gap-3 text-primary-gold font-sans font-semibold">
-        <span>Pay ONLY When You Receive It</span>
+        <span>{COPY.MARQUEE_ITEM_1}</span>
         <span className="text-gray-300"><FaGripLinesVertical /></span>
-        <span>FREE Delivery to Your Door</span>
+        <span>{COPY.MARQUEE_ITEM_2}</span>
       </div>
 
       {/* Static text — sm and below only */}
       <div className="flex md:hidden flex-1 text-primary-gold font-sans font-semibold text-sm">
-        Pay ONLY When You Receive It
+        {COPY.MARQUEE_ITEM_1}
       </div>
 
       <Button
@@ -67,7 +68,7 @@ export default function ScrollHeaderCTA() {
             Loading...
           </>
         ) : (
-          "ORDER NOW"
+          COPY.SCROLL_CTA_BUTTON
         )}
       </Button>
     </section>

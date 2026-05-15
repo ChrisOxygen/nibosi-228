@@ -1,13 +1,7 @@
 import Image from "next/image";
 import PricingTotals from "@/components/ui/pricing-totals";
-import { PRICING, formatNaira } from "@/constants/pricing";
+import { formatNaira, LINE_ITEMS } from "@/constants/pricing";
 import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
-
-const LINE_ITEMS = [
-  { label: PRODUCT.WATCH_NAME, price: PRICING.WATCH },
-  { label: PRODUCT.BRACELET_NAME, price: PRICING.BRACELET },
-  { label: "Delivery in Lagos (FREE)", price: PRICING.DELIVERY },
-] as const;
 
 export default function ProductPricing() {
   return (

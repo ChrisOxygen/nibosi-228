@@ -11,26 +11,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Spinner } from "@/components/ui/spinner";
-import { PRICING, formatNaira } from "@/constants/pricing";
+import { PRICING, formatNaira, LINE_ITEMS } from "@/constants/pricing";
 import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
+import { COPY, QUANTITY_OPTIONS } from "@/constants/copy";
 import { checkoutSchema, type CheckoutFormValues } from "@/validators/checkout";
-
-const LINE_ITEMS = [
-  { label: PRODUCT.WATCH_NAME, price: PRICING.WATCH },
-  { label: PRODUCT.BRACELET_NAME, price: PRICING.BRACELET },
-  { label: "Delivery in Lagos(FREE)", price: PRICING.DELIVERY },
-] as const;
-
-const QUANTITY_OPTIONS = [
-  {
-    value: "1",
-    label: `1 Nibosi Ruby Prestige watch +FREE Gold bracelet = ${formatNaira(PRICING.OFFER)}`,
-  },
-  {
-    value: "2",
-    label: `2 Nibosi Ruby Prestige watch +FREE Gold bracelet = ${formatNaira(PRICING.OFFER * 2)}`,
-  },
-] as const;
 
 function FieldWrapper({ children }: { children: React.ReactNode }) {
   return <div className="flex flex-col gap-1.5">{children}</div>;
@@ -132,7 +116,7 @@ export default function CheckoutForm() {
           </div>
 
           <h2 className="font-heading font-semibold text-2xl sm:text-3xl text-primary-gold text-center">
-            Your Package Includes
+            {COPY.PACKAGE_HEADING}
           </h2>
 
           <div className="flex flex-col gap-3 px-2 font-heading">
@@ -281,7 +265,7 @@ export default function CheckoutForm() {
                   Placing Order...
                 </>
               ) : (
-                "Place Your Order!!"
+                COPY.SUBMIT_BUTTON
               )}
             </button>
           </form>

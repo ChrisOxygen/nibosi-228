@@ -1,5 +1,6 @@
 import { FaCheck } from "react-icons/fa";
 import { GUARANTEE_ITEMS } from "@/constants/guarantee";
+import { COPY } from "@/constants/copy";
 
 export default function Guarantee() {
   return (
@@ -13,12 +14,10 @@ export default function Guarantee() {
         <div className="relative z-10 flex flex-col items-center">
           <div className="flex flex-col items-center gap-2">
             <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold text-center">
-              OUR GUARANTEE
+              {COPY.GUARANTEE_TITLE}
             </h2>
             <span className="text-lg text-center font-semibold">
-              We&apos;re so confident in Nibosi Ruby Prestige that we offer a
-              full satisfaction guarantee, because we&apos;ve tested it
-              thoroughly and it exceeds industry standards for this price point
+              {COPY.GUARANTEE_DESCRIPTION}
             </span>
           </div>
           <div className="flex items-center flex-col gap-6 p-4">
@@ -37,9 +36,7 @@ export default function Guarantee() {
             </ul>
           </div>
           <h3 className="max-w-4xl text-primary-gold font-semibold text-center border-2 border-primary-gold p-4 sm:p-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-            If Nibosi Ruby Prestige doesn&apos;t exceed your expectations for
-            luxury and presence, return it for a full refund - no questions
-            asked.
+            {COPY.GUARANTEE_REFUND}
           </h3>
         </div>
       </div>

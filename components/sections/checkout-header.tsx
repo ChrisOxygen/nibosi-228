@@ -1,3 +1,5 @@
+import { COPY } from "@/constants/copy";
+
 export default function CheckoutHeader() {
   return (
     <section className="relative overflow-hidden section-y-p">
@@ -10,12 +12,10 @@ export default function CheckoutHeader() {
         <div className="relative z-10 flex flex-col items-center">
           <div className="flex flex-col items-center gap-2">
             <h2 className="font-semibold text-3xl sm:text-4xl lg:text-6xl text-primary-gold text-center">
-              Enter your delivery details
+              {COPY.CHECKOUT_HEADING}
             </h2>
             <span className="text-base sm:text-lg lg:text-2xl text-center max-w-4xl font-semibold italic px-4">
-              Please be sure you are FULLY Ready for the Product and have the
-              Money to Pay at the Point of Delivery , because we spend alot of
-              Money on advertisement, logistics and delivery to your location!!
+              {COPY.CHECKOUT_WARNING}
             </span>
           </div>
         </div>
