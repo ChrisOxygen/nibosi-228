@@ -14,7 +14,7 @@ export default function PricingCTA({ variant = "default" }: Props) {
   const hasOrdered = useOrderStore((s) => s.hasOrdered);
 
   return (
-    <div className="relative w-full sm:max-w-md">
+    <div className="relative w-full sm:max-w-2xl">
       <Image
         alt=""
         src="/assets/imgi_3_decorator-shape-01.webp"
