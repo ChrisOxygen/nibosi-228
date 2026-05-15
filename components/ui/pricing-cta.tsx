@@ -28,8 +28,8 @@ export default function PricingCTA({ variant = "default" }: Props) {
         height={1000}
         className={
           isHero
-            ? "absolute top-5 -left-25 w-20 h-[120%]"
-            : "absolute -rotate-45 -top-30 -left-25 w-20 h-[120%]"
+            ? "hidden md:block absolute top-5 -left-25 w-20 h-[120%]"
+            : "hidden md:block absolute -rotate-45 -top-20 md:-top-30 -left-25 w-20 h-[120%]"
         }
       />
       <Image
@@ -39,22 +39,22 @@ export default function PricingCTA({ variant = "default" }: Props) {
         height={1000}
         className={
           isHero
-            ? "absolute top-5 -right-25 w-20 h-[120%]"
-            : "absolute -top-30 rotate-45 -right-25 w-20 h-[120%]"
+            ? "hidden md:block absolute top-5 -right-25 w-20 h-[120%]"
+            : "hidden md:block absolute -top-20 md:-top-30  rotate-45 -right-25 w-20 h-[120%]"
         }
       />
       <a
         href={hasOrdered ? "/thank-you" : "/checkout"}
         onClick={handleClick}
-        className="gold-cta flex flex-col items-center gap-2 text-black font-heading px-14 py-4"
+        className="gold-cta flex flex-col items-center gap-2 text-black font-heading px-6 sm:px-10 md:px-14 py-4"
       >
-        <span className="text-base font-medium">
+        <span className="text-xs sm:text-sm md:text-base font-medium text-center">
           Original price {formatNaira(PRICING.ORIGINAL)}
         </span>
-        <span className="text-4xl font-semibold">
+        <span className="text-xl sm:text-2xl md:text-4xl font-semibold text-center">
           Get This Watch for {formatNaira(PRICING.OFFER)}
         </span>
-        <span className="text-base font-medium">
+        <span className="text-xs sm:text-sm md:text-base font-medium text-center">
           Save {formatNaira(PRICING.SAVINGS)} | Free Delivery | Pay on delivery
         </span>
       </a>

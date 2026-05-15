@@ -4,10 +4,10 @@ import PricingCTA from "./pricing-cta";
 export default function PricingTotals() {
   return (
     <div className="flex flex-col items-center gap-4">
-      <h3 className="font-semibold text-4xl text-[#808080] line-through">
+      <h3 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#808080] line-through text-center">
         Total Value: {formatNaira(PRICING.ORIGINAL)}
       </h3>
-      <h2 className="font-semibold text-5xl text-primary-gold">
+      <h2 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-gold text-center">
         Order Today : {formatNaira(PRICING.OFFER)}
       </h2>
       <PricingCTA />

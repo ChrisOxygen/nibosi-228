@@ -20,7 +20,7 @@ function FAQItem({
         className="flex w-full items-center justify-between p-4 text-left"
       >
         <span
-          className={`font-heading text-xl font-semibold transition-colors duration-300 ${
+          className={`font-heading text-base sm:text-xl font-semibold transition-colors duration-300 ${
             isOpen ? "text-white" : "text-primary-gold"
           }`}
         >
@@ -73,9 +73,9 @@ function FAQList({ faqs }: { faqs: FAQ[] }) {
 export default function FAQ() {
   return (
     <section className="section-y-p bg-[#1B1C1D]">
-      <div className="max-w-6xl mx-auto flex flex-col gap-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col items-center gap-2">
-          <h2 className="font-semibold text-6xl text-primary-gold">
+          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold text-center">
             Customer Questions & Answers
           </h2>
           <span className="text-lg text-center font-semibold">

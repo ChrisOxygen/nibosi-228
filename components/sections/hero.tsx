@@ -20,11 +20,11 @@ export default function Hero() {
             "linear-gradient(to top, #1B1C1D 0%, #1B1C1D 50%, transparent 51%)",
         }}
       />
-      <div className="relative z-10 max-w-6xl mx-auto flex items-center flex-col gap-8">
-        <h1 className="max-w-4xl text-6xl underline font-semibold text-center text-primary-gold">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center flex-col gap-8">
+        <h1 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl underline font-semibold text-center text-primary-gold">
           {PRODUCT.HEADLINE}
         </h1>
-        <p className="max-w-3xl text-2xl font-semibold italic text-center">
+        <p className="max-w-3xl text-base sm:text-xl md:text-2xl font-semibold italic text-center">
           {PRODUCT.SUBTITLE}
         </p>
         <CountdownTimer />

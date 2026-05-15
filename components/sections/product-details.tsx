@@ -19,7 +19,7 @@ function WatchDetails() {
         ))}
       </div>
       <div className="flex flex-col gap-2">
-        <h2 className="mont-semibold text-4xl text-primary-gold">
+        <h2 className="mont-semibold text-2xl sm:text-3xl md:text-4xl text-primary-gold">
           {PRODUCT.WATCH_NAME}
         </h2>
         <span className="font-semibold">{PRODUCT.WATCH_TAGLINE}</span>
@@ -42,20 +42,22 @@ function WatchDetails() {
 
 function BraceletDetails() {
   return (
-    <div className="flex gap-4 w-full border-3 bg-[#272724] border-primary-gold p-4">
+    <div className="flex flex-col sm:flex-row gap-4 w-full border-3 bg-[#272724] border-primary-gold p-4">
       <Image
         alt={PRODUCT.BRACELET_NAME}
         src={PRODUCT_IMAGES.BRACELET}
         width={1000}
         height={1000}
-        className="basis-1/4 h-[210px] object-cover"
+        className="w-full sm:basis-1/4 sm:w-auto h-[200px] sm:h-[210px] object-cover"
       />
-      <div className="flex basis-3/4 flex-col gap-2 justify-center">
-        <span className="text-primary-gold text-3xl italic">(FREE GIFT)</span>
-        <h3 className="text-primary-gold text-4xl font-semibold">
+      <div className="flex flex-col gap-2 justify-center">
+        <span className="text-primary-gold text-xl sm:text-2xl md:text-3xl italic">
+          (FREE GIFT)
+        </span>
+        <h3 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl font-semibold">
           {PRODUCT.BRACELET_NAME}
         </h3>
-        <span className="text-lg font-semibold">
+        <span className="text-base sm:text-lg font-semibold">
           {PRODUCT.BRACELET_DESCRIPTION}
         </span>
       </div>
@@ -66,9 +68,9 @@ function BraceletDetails() {
 export default function ProductDetails() {
   return (
     <section className="section-y-p bg-[#1B1C1D]">
-      <div className="max-w-6xl mx-auto flex flex-col gap-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col items-center gap-2">
-          <h2 className="font-semibold text-6xl text-primary-gold">
+          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold text-center">
             {PRODUCT.NAME.toUpperCase()}
           </h2>
           <span className="text-lg font-semibold">{PRODUCT.TAGLINE}</span>
