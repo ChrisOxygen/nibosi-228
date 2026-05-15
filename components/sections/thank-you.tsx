@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const LUCKY_NUMBER = 7;
 const WHATSAPP_NUMBER = "2348000000000"; // replace with real number
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi! I just placed an order for the Nibosi Ruby Prestige watch set and I'm ready for delivery today!"
+  "Hi! I just placed an order for the Nibosi Ruby Prestige watch set and I'm ready for delivery today!",
 )}`;
 
 function GoldRule() {
@@ -30,12 +30,13 @@ export default function ThankYou() {
     <div
       className="relative min-h-screen flex items-center bg-black overflow-hidden"
       style={{
-        backgroundImage: "url('/assets/black-gears-texture.jpeg')",
+        backgroundImage:
+          "url('/assets/nibosi-watch-gold-red-leather-wood.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black/88" />
+      <div className="absolute inset-0 bg-black/95" />
 
       <div className="relative z-10 w-full max-w-2xl mx-auto px-5 sm:px-8 py-10 flex flex-col gap-6">
         <GoldRule />
@@ -43,7 +44,8 @@ export default function ThankYou() {
         {/* Heading */}
         <div className="flex flex-col gap-1">
           <h1 className="font-heading font-bold text-4xl sm:text-5xl text-primary-gold leading-tight">
-            Order Confirmed —<br />You&apos;re Our Lucky #{LUCKY_NUMBER}!
+            Order Confirmed —<br />
+            You&apos;re Our Lucky #{LUCKY_NUMBER}!
           </h1>
           <p className="font-semibold text-lg sm:text-xl text-white/90">
             Congratulations,{" "}
@@ -55,34 +57,38 @@ export default function ThankYou() {
         <div className="flex flex-col gap-3 text-white/80 text-base sm:text-lg leading-relaxed">
           <p>
             You&apos;re officially our{" "}
-            <span className="text-primary-gold font-semibold">{LUCKY_NUMBER}th customer today</span>{" "}
-            — and {LUCKY_NUMBER}{" "}has always been our lucky number. Since you hit that magic spot,
-            we&apos;re throwing in an{" "}
-            <strong className="text-white">extra free gift</strong>{" "}
-            with your {PRODUCT.NAME}{" "}order.
-          </p>
-          <p className="text-primary-gold font-semibold">
-            Your package is ready — message us now for same-day delivery in Lagos State!
+            <span className="text-primary-gold font-semibold">
+              {LUCKY_NUMBER}th customer today
+            </span>{" "}
+            — and {LUCKY_NUMBER} has always been our lucky number. Since you hit
+            that magic spot, we&apos;re throwing in an{" "}
+            <strong className="text-white">extra free gift</strong> with your{" "}
+            {PRODUCT.NAME} order.
           </p>
         </div>
 
         {/* WhatsApp CTA */}
+        <p className="text-white/80 text-base sm:text-lg text-center">
+          Your package is ready — want it at your doorstep{" "}
+          <span className="text-primary-gold font-semibold">
+            before the day is over?
+          </span>{" "}
+          Tap below and we&apos;ll make it happen,{" "}
+          <span className="text-primary-gold font-semibold">
+            at no extra cost.
+          </span>
+        </p>
         <a
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-[#25D366] px-6 py-5 text-white transition-transform hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(37,211,102,0.45)]"
+          className="whatsapp-pulse group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-[#25D366] px-6 py-6 text-white hover:shadow-[0_12px_40px_rgba(37,211,102,0.45)]"
         >
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none" />
-          <FaWhatsapp className="text-4xl sm:text-5xl shrink-0" />
-          <div className="flex flex-col">
-            <span className="font-heading font-bold text-lg sm:text-2xl leading-tight">
-              Contact Us on WhatsApp — Get Delivery Today!
-            </span>
-            <span className="text-sm font-medium opacity-90">
-              At no extra cost | Just for you!
-            </span>
-          </div>
+          <FaWhatsapp className="text-5xl sm:text-6xl shrink-0" />
+          <span className="font-heading capitalize font-bold text-2xl sm:text-3xl leading-tight">
+            I want my delivery today
+          </span>
         </a>
 
         <GoldRule />
