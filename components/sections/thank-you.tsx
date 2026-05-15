@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useOrderStore } from "@/store/order";
 import { PRODUCT } from "@/constants/product";
 import { FaWhatsapp } from "react-icons/fa";
@@ -78,7 +79,7 @@ export default function ThankYou() {
             at no extra cost.
           </span>
         </p>
-        <a
+        <Link
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
@@ -89,7 +90,7 @@ export default function ThankYou() {
           <span className="font-heading capitalize font-bold text-2xl sm:text-3xl leading-tight">
             I want my delivery today
           </span>
-        </a>
+        </Link>
 
         <GoldRule />
       </div>

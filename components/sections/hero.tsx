@@ -6,12 +6,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section
-      className="section-y-p relative overflow-hidden"
-      style={{
-        backgroundImage: "url('/assets/black-silk-texture.jpeg')",
-        backgroundSize: "contain",
-        backgroundPosition: "top",
-      }}
+      className="section-y-p relative overflow-hidden bg-cover sm:bg-contain bg-top"
+      style={{ backgroundImage: "url('/assets/black-silk-texture.jpeg')" }}
     >
       <div
         className="absolute inset-0 pointer-events-none"

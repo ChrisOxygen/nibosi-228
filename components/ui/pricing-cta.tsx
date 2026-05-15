@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { PRICING, formatNaira } from "@/constants/pricing";
 import { useOrderStore } from "@/store/order";
 
@@ -11,16 +11,10 @@ type Props = {
 
 export default function PricingCTA({ variant = "default" }: Props) {
   const isHero = variant === "hero";
-  const router = useRouter();
   const hasOrdered = useOrderStore((s) => s.hasOrdered);
 
-  function handleClick(e: React.MouseEvent) {
-    e.preventDefault();
-    router.push(hasOrdered ? "/thank-you" : "/checkout");
-  }
-
   return (
-    <div className="relative">
+    <div className="relative w-full sm:max-w-md">
       <Image
         alt=""
         src="/assets/imgi_3_decorator-shape-01.webp"
@@ -43,9 +37,8 @@ export default function PricingCTA({ variant = "default" }: Props) {
             : "hidden md:block absolute -top-20 md:-top-30  rotate-45 -right-25 w-20 h-[120%]"
         }
       />
-      <a
+      <Link
         href={hasOrdered ? "/thank-you" : "/checkout"}
-        onClick={handleClick}
         className="gold-cta flex flex-col items-center gap-2 text-black font-heading px-6 sm:px-10 md:px-14 py-4"
       >
         <span className="text-xs sm:text-sm md:text-base font-medium text-center">
@@ -57,7 +50,7 @@ export default function PricingCTA({ variant = "default" }: Props) {
         <span className="text-xs sm:text-sm md:text-base font-medium text-center">
           Save {formatNaira(PRICING.SAVINGS)} | Free Delivery | Pay on delivery
         </span>
-      </a>
+      </Link>
     </div>
   );
 }
