@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { PRICING, formatNaira } from "@/constants/pricing";
+import { useOrderStore } from "@/store/order";
 
 type Props = {
   variant?: "hero" | "default";
@@ -7,6 +11,13 @@ type Props = {
 
 export default function PricingCTA({ variant = "default" }: Props) {
   const isHero = variant === "hero";
+  const router = useRouter();
+  const hasOrdered = useOrderStore((s) => s.hasOrdered);
+
+  function handleClick(e: React.MouseEvent) {
+    e.preventDefault();
+    router.push(hasOrdered ? "/thank-you" : "/checkout");
+  }
 
   return (
     <div className="relative">
@@ -33,7 +44,8 @@ export default function PricingCTA({ variant = "default" }: Props) {
         }
       />
       <a
-        href="/checkout"
+        href={hasOrdered ? "/thank-you" : "/checkout"}
+        onClick={handleClick}
         className="gold-cta flex flex-col items-center gap-2 text-black font-heading px-14 py-4"
       >
         <span className="text-base font-medium">

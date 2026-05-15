@@ -1,3 +1,9 @@
+import ThankYou from "@/components/sections/thank-you";
+
 export default function ThankYouPage() {
-  return <></>;
+  return (
+    <main>
+      <ThankYou />
+    </main>
+  );
 }

@@ -2,7 +2,9 @@
 
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useOrderStore } from "@/store/order";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -61,6 +63,9 @@ const INPUT_CLASS =
   "border-primary-gold/60 focus-visible:border-primary-gold bg-transparent text-white h-10";
 
 export default function CheckoutForm() {
+  const router = useRouter();
+  const setOrder = useOrderStore((s) => s.setOrder);
+
   const {
     register,
     control,
@@ -72,7 +77,8 @@ export default function CheckoutForm() {
   });
 
   function onSubmit(data: CheckoutFormValues) {
-    console.log("Order submitted:", data);
+    setOrder(data.firstName);
+    router.push("/thank-you");
   }
 
   return (
