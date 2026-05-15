@@ -19,7 +19,7 @@ export default function ProductBenefits() {
         <h2 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-4xl sm:text-center">
           Why Ruby Prestige is Different from Everything Else...
         </h2>
-        <div className="border-2 border-white p-2 flex flex-col sm:flex-row gap-1 items-stretch w-full">
+        <div className="border-2 border-white p-2 flex flex-col md:flex-row gap-1 items-stretch w-full">
           <div className="flex flex-1 flex-col gap-6 p-4">
             <span className="text-red-500 text-lg sm:text-2xl font-semibold">
               Other Watches
