@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -62,22 +63,48 @@ function FieldError({ message }: { message?: string }) {
 const INPUT_CLASS =
   "border-primary-gold/60 focus-visible:border-primary-gold bg-transparent text-white h-10";
 
+function isSameData(a: CheckoutFormValues, b: CheckoutFormValues) {
+  const keys: (keyof CheckoutFormValues)[] = [
+    "firstName",
+    "lastName",
+    "mainPhone",
+    "altPhone",
+    "quantity",
+    "email",
+    "deliveryAddress",
+    "state",
+  ];
+  return keys.every((k) => (a[k] ?? "") === (b[k] ?? ""));
+}
+
 export default function CheckoutForm() {
   const router = useRouter();
   const setOrder = useOrderStore((s) => s.setOrder);
+  const orderData = useOrderStore((s) => s.orderData);
 
   const {
     register,
     control,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutSchema),
     defaultValues: { quantity: "1" },
   });
 
+  useEffect(() => {
+    if (orderData) {
+      reset(orderData);
+    }
+  }, [orderData, reset]);
+
   function onSubmit(data: CheckoutFormValues) {
-    setOrder(data.firstName);
+    if (orderData && isSameData(data, orderData)) {
+      router.push("/thank-you");
+      return;
+    }
+    setOrder(data);
     router.push("/thank-you");
   }
 

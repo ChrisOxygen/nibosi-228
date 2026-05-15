@@ -1,9 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { PRICING, formatNaira } from "@/constants/pricing";
-import { useOrderStore } from "@/store/order";
 
 type Props = {
   variant?: "hero" | "default";
@@ -11,7 +8,6 @@ type Props = {
 
 export default function PricingCTA({ variant = "default" }: Props) {
   const isHero = variant === "hero";
-  const hasOrdered = useOrderStore((s) => s.hasOrdered);
 
   return (
     <div className="relative w-full sm:max-w-2xl">
@@ -38,7 +34,7 @@ export default function PricingCTA({ variant = "default" }: Props) {
         }
       />
       <Link
-        href={hasOrdered ? "/thank-you" : "/checkout"}
+        href="/checkout"
         className="gold-cta flex flex-col items-center gap-2 text-black font-heading px-6 sm:px-10 md:px-14 py-4"
       >
         <span className="text-xs sm:text-sm md:text-base font-medium text-center">

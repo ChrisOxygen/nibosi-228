@@ -2,11 +2,13 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import type { CheckoutFormValues } from "@/validators/checkout";
 
 type OrderState = {
   firstName: string;
   hasOrdered: boolean;
-  setOrder: (firstName: string) => void;
+  orderData: CheckoutFormValues | null;
+  setOrder: (data: CheckoutFormValues) => void;
 };
 
 export const useOrderStore = create<OrderState>()(
@@ -14,7 +16,9 @@ export const useOrderStore = create<OrderState>()(
     (set) => ({
       firstName: "",
       hasOrdered: false,
-      setOrder: (firstName) => set({ firstName, hasOrdered: true }),
+      orderData: null,
+      setOrder: (data) =>
+        set({ firstName: data.firstName, hasOrdered: true, orderData: data }),
     }),
     { name: "nibosi-order" }
   )
