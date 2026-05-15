@@ -15,8 +15,8 @@ export default function ProductBenefits() {
       }}
     >
       <div className="absolute inset-0 bg-black/90 pointer-events-none" />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-10">
-        <h2 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-4xl text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:items-center gap-10">
+        <h2 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-4xl sm:text-center">
           Why Ruby Prestige is Different from Everything Else...
         </h2>
         <div className="border-2 border-white p-2 flex flex-col sm:flex-row gap-1 items-stretch w-full">
