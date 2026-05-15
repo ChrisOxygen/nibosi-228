@@ -57,7 +57,7 @@ function FAQList({ faqs }: { faqs: FAQ[] }) {
   };
 
   return (
-    <div className="flex w-full flex-col rounded-md overflow-hidden border border-white/10">
+    <div className="flex w-full flex-col  overflow-hidden ">
       {faqs.map((faq, index) => (
         <FAQItem
           key={index}
