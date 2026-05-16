@@ -150,6 +150,18 @@
   }
 }
 
+/* Purchase toast close button */
+[data-sonner-toast] [data-close-button] {
+  background: #1b1c1d !important;
+  border-color: #d4af37 !important;
+  color: #ffffff !important;
+}
+
+[data-sonner-toast] [data-close-button] svg {
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
 @keyframes gold-shift {
   0% {
     background-position: 0% 50%;

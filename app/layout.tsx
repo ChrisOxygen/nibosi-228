@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
+import { PurchaseToast } from "@/components/purchase-toast";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -35,6 +37,8 @@ export default function RootLayout({
       <body suppressHydrationWarning className="min-h-full flex flex-col">
         {children}
         <Footer />
+        <Toaster position="bottom-left" />
+        <PurchaseToast />
       </body>
     </html>
   );
