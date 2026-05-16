@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useCountdownStore } from "@/stores/countdown-store";
+import { useCountdownStore } from "@/store/countdown-store";
 
 interface TimeLeft {
   days: string;
