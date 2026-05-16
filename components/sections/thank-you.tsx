@@ -9,11 +9,11 @@ import { FaWhatsapp } from "react-icons/fa";
 function GoldRule() {
   return (
     <div className="flex items-center gap-3 w-full">
-      <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-primary-gold to-primary-gold" />
-      <div className="size-2 rotate-45 bg-primary-gold shrink-0" />
-      <div className="size-2 rotate-45 border border-primary-gold shrink-0" />
-      <div className="size-2 rotate-45 bg-primary-gold shrink-0" />
-      <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent via-primary-gold to-primary-gold" />
+      <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-brand-primary to-brand-primary" />
+      <div className="size-2 rotate-45 bg-brand-primary shrink-0" />
+      <div className="size-2 rotate-45 border border-brand-primary shrink-0" />
+      <div className="size-2 rotate-45 bg-brand-primary shrink-0" />
+      <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent via-brand-primary to-brand-primary" />
     </div>
   );
 }
@@ -39,13 +39,13 @@ export default function ThankYou() {
 
         {/* Heading */}
         <div className="flex flex-col gap-1">
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-primary-gold leading-tight">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl text-brand-primary leading-tight">
             Order Confirmed —<br />
             You&apos;re Our Lucky #{PRODUCT.LUCKY_NUMBER}!
           </h1>
           <p className="font-semibold text-lg sm:text-xl text-white/90">
             Congratulations,{" "}
-            <span className="text-primary-gold">{displayName}</span>!
+            <span className="text-brand-primary">{displayName}</span>!
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function ThankYou() {
         <div className="flex flex-col gap-3 text-white/80 text-base sm:text-lg leading-relaxed">
           <p>
             You&apos;re officially our{" "}
-            <span className="text-primary-gold font-semibold">
+            <span className="text-brand-primary font-semibold">
               {PRODUCT.LUCKY_NUMBER}th customer today
             </span>{" "}
             — and {PRODUCT.LUCKY_NUMBER} has always been our lucky number. Since you hit
@@ -66,11 +66,11 @@ export default function ThankYou() {
         {/* WhatsApp CTA */}
         <p className="text-white/80 text-base sm:text-lg ">
           Your package is ready — want it at your doorstep{" "}
-          <span className="text-primary-gold font-semibold">
+          <span className="text-brand-primary font-semibold">
             before the day is over?
           </span>{" "}
           Tap below and we&apos;ll make it happen,{" "}
-          <span className="text-primary-gold font-semibold">
+          <span className="text-brand-primary font-semibold">
             at no extra cost.
           </span>
         </p>

@@ -13,7 +13,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 function WatchDetails() {
   return (
-    <div className="flex flex-col gap-4 w-full border-3 border-primary-gold p-4">
+    <div className="flex flex-col gap-4 w-full border-3 border-brand-primary p-4">
       {/* Mobile: autoplay slider, one image at a time */}
       <div className="sm:hidden w-full overflow-hidden">
         <Carousel
@@ -52,7 +52,7 @@ function WatchDetails() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h2 className="mont-semibold text-2xl sm:text-3xl md:text-4xl text-primary-gold">
+        <h2 className="mont-semibold text-2xl sm:text-3xl md:text-4xl text-brand-primary">
           {PRODUCT.WATCH_NAME}
         </h2>
         <span className="font-semibold">{PRODUCT.WATCH_TAGLINE}</span>
@@ -61,7 +61,7 @@ function WatchDetails() {
         <ul className="flex gap-3 flex-col">
           {WATCH_FEATURES.map((feature) => (
             <li key={feature} className="flex gap-4 sm:items-center">
-              <span className="text-primary-gold mt-1 sm:mt-0">
+              <span className="text-brand-primary mt-1 sm:mt-0">
                 <FaRegCheckSquare />
               </span>
               <span>{feature}</span>
@@ -75,7 +75,7 @@ function WatchDetails() {
 
 function BraceletDetails() {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 w-full border-3 bg-brand-surface border-primary-gold p-4">
+    <div className="flex flex-col sm:flex-row gap-4 w-full border-3 bg-brand-surface border-brand-primary p-4">
       <Image
         alt={PRODUCT.BRACELET_NAME}
         src={PRODUCT_IMAGES.BRACELET}
@@ -84,10 +84,10 @@ function BraceletDetails() {
         className="w-full sm:basis-1/4 sm:w-auto h-[300px] sm:h-[210px] object-cover"
       />
       <div className="flex flex-col gap-2 justify-center">
-        <span className="text-primary-gold text-xl sm:text-2xl md:text-3xl italic">
+        <span className="text-brand-primary text-xl sm:text-2xl md:text-3xl italic">
           (FREE GIFT)
         </span>
-        <h3 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl font-semibold">
+        <h3 className="text-brand-primary text-2xl sm:text-3xl md:text-4xl font-semibold">
           {PRODUCT.BRACELET_NAME}
         </h3>
         <span className="text-base sm:text-lg font-semibold">
@@ -103,7 +103,7 @@ export default function ProductDetails() {
     <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col sm:items-center gap-2">
-          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold sm:text-center">
+          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-primary sm:text-center">
             {PRODUCT.NAME.toUpperCase()}
           </h2>
           <span className="text-lg font-semibold">{PRODUCT.TAGLINE}</span>

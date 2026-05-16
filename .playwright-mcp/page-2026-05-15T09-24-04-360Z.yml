@@ -1,0 +1,58 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - img [ref=e8]
+          - generic [ref=e10]: Order Confirmed
+        - img [ref=e14]
+        - generic [ref=e16]:
+          - 'heading "You''re Our Lucky #7!" [level=1] [ref=e17]'
+          - paragraph [ref=e18]: Congratulations, Friend!
+        - paragraph [ref=e25]: Your Nibosi Ruby Prestige order is locked in. Scroll down for your exclusive bonus.
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e28]: "#7"
+          - paragraph [ref=e29]:
+            - text: You're officially our
+            - generic [ref=e30]: 7th customer today
+            - text: ", and here's the thing… 7 has always been our lucky number around here."
+          - paragraph [ref=e31]: Since you hit that magic spot, we're throwing in an extra free gift with your Nibosi Ruby Prestigeorder. Trust me — you're going to love this surprise.
+          - paragraph [ref=e32]: Your package is ready to go, and since you're in Lagos State, we can probably get this to you today if you act fast.
+        - generic [ref=e33]:
+          - heading "What happens next" [level=2] [ref=e34]
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [ref=e37]:
+                - img [ref=e38]
+                - generic [ref=e40]: Step 1
+              - paragraph [ref=e41]: Order Received
+              - paragraph [ref=e42]: Your order is confirmed and logged in our system.
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - img [ref=e45]
+                - generic [ref=e47]: Step 2
+              - paragraph [ref=e48]: Gift Being Prepared
+              - paragraph [ref=e49]: We're adding your exclusive surprise gift to the package.
+            - generic [ref=e50]:
+              - generic [ref=e51]:
+                - img [ref=e52]
+                - generic [ref=e56]: Step 3
+              - paragraph [ref=e57]: Out for Delivery
+              - paragraph [ref=e58]: Your package ships same-day if you act fast.
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: Ready for same-day delivery? Message us now and let's make it happen!
+          - link "Exclusive offer Contact Us on WhatsApp — Get Delivery Today! At no extra cost | Just for you!" [ref=e61] [cursor=pointer]:
+            - /url: https://wa.me/2348000000000?text=Hi!%20I%20just%20placed%20an%20order%20for%20the%20Nibosi%20Ruby%20Prestige%20watch%20set%20and%20I'm%20ready%20for%20delivery%20today!
+            - generic [ref=e62]: Exclusive offer
+            - generic [ref=e63]:
+              - img [ref=e64]
+              - text: Contact Us on WhatsApp — Get Delivery Today!
+            - generic [ref=e66]: At no extra cost | Just for you!
+  - contentinfo [ref=e73]:
+    - generic [ref=e76]:
+      - paragraph [ref=e77]: © Copyright 2025 VeluxGrayFashion.com All rights reserved
+      - paragraph [ref=e78]: This website Is Not A Part Of The Facebook Website Or Facebook Inc. FACEBOOK Is A Trademark Of FACEBOOK, Inc.
+  - button "Open Next.js Dev Tools" [ref=e84] [cursor=pointer]:
+    - img [ref=e85]
+  - alert [ref=e88]

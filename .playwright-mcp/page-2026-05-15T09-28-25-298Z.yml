@@ -1,0 +1,26 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e12]:
+        - 'heading "Order Confirmed — You''re Our Lucky #7!" [level=1] [ref=e13]'
+        - paragraph [ref=e14]: Congratulations, Friend!
+      - generic [ref=e15]:
+        - paragraph [ref=e16]:
+          - text: You're officially our
+          - generic [ref=e17]: 7th customer today
+          - text: — and 7 has always been our lucky number. Since you hit that magic spot, we're throwing in an
+          - strong [ref=e18]: extra free gift
+          - text: with your Nibosi Ruby Prestige order.
+        - paragraph [ref=e19]: Your package is ready — message us now for same-day delivery in Lagos State!
+      - link "Contact Us on WhatsApp — Get Delivery Today! At no extra cost | Just for you!" [ref=e20] [cursor=pointer]:
+        - /url: https://wa.me/2348000000000?text=Hi!%20I%20just%20placed%20an%20order%20for%20the%20Nibosi%20Ruby%20Prestige%20watch%20set%20and%20I'm%20ready%20for%20delivery%20today!
+        - img [ref=e21]
+        - generic [ref=e23]:
+          - generic [ref=e24]: Contact Us on WhatsApp — Get Delivery Today!
+          - generic [ref=e25]: At no extra cost | Just for you!
+  - contentinfo [ref=e32]:
+    - generic [ref=e35]:
+      - paragraph [ref=e36]: © Copyright 2025 VeluxGrayFashion.com All rights reserved
+      - paragraph [ref=e37]: This website Is Not A Part Of The Facebook Website Or Facebook Inc. FACEBOOK Is A Trademark Of FACEBOOK, Inc.
+  - button "Open Next.js Dev Tools" [ref=e43] [cursor=pointer]:
+    - img [ref=e44]

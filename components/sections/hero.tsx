@@ -17,7 +17,7 @@ export default function Hero() {
         }}
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center flex-col gap-8">
-        <h1 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl underline font-semibold text-center text-primary-gold">
+        <h1 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl underline font-semibold text-center text-brand-primary">
           {PRODUCT.HEADLINE}
         </h1>
         <p className="max-w-3xl text-base sm:text-xl md:text-2xl font-semibold italic text-center">

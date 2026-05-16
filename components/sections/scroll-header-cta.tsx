@@ -9,13 +9,13 @@ import { COPY } from "@/constants/copy";
 
 const MarqueeItem = () => (
   <div className="flex items-center">
-    <span className="shrink-0 text-primary-gold font-sans font-semibold">
+    <span className="shrink-0 text-brand-primary font-sans font-semibold">
       {COPY.MARQUEE_ITEM_1}
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
       <FaGripLinesVertical />
     </span>
-    <span className="shrink-0 text-primary-gold font-sans font-semibold">
+    <span className="shrink-0 text-brand-primary font-sans font-semibold">
       {COPY.MARQUEE_ITEM_2}
     </span>
     <span className="shrink-0 text-gray-300 mx-4">
@@ -46,21 +46,21 @@ export default function ScrollHeaderCTA() {
       </div>
 
       {/* Static text — md only (hidden on sm and below, hidden on lg+) */}
-      <div className="hidden md:flex lg:hidden flex-1 items-center gap-3 text-primary-gold font-sans font-semibold">
+      <div className="hidden md:flex lg:hidden flex-1 items-center gap-3 text-brand-primary font-sans font-semibold">
         <span>{COPY.MARQUEE_ITEM_1}</span>
         <span className="text-gray-300"><FaGripLinesVertical /></span>
         <span>{COPY.MARQUEE_ITEM_2}</span>
       </div>
 
       {/* Static text — sm and below only */}
-      <div className="flex md:hidden flex-1 text-primary-gold font-sans font-semibold text-sm">
+      <div className="flex md:hidden flex-1 text-brand-primary font-sans font-semibold text-sm">
         {COPY.MARQUEE_ITEM_1}
       </div>
 
       <Button
         onClick={handleOrder}
         disabled={isPending}
-        className="shrink-0 rounded bg-primary-gold text-black font-heading font-semibold hover:bg-primary-gold/90 gap-1.5 disabled:opacity-80"
+        className="shrink-0 rounded bg-brand-primary text-black font-heading font-semibold hover:bg-brand-primary/90 gap-1.5 disabled:opacity-80"
       >
         {isPending ? (
           <>

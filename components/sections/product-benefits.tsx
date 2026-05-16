@@ -14,7 +14,7 @@ export default function ProductBenefits() {
     >
       <div className="absolute inset-0 bg-black/90 pointer-events-none" />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:items-center gap-10">
-        <h2 className="text-primary-gold text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-4xl sm:text-center">
+        <h2 className="text-brand-primary text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold max-w-4xl sm:text-center">
           {COPY.BENEFITS_HEADING}
         </h2>
         <div className="border-2 border-white p-2 flex flex-col md:flex-row gap-1 items-stretch w-full">

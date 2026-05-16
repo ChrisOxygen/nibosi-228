@@ -17,7 +17,7 @@ export default function Testimonials() {
     <section className="section-y-p bg-brand-surface">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10 items-center">
         <div className="flex flex-col items-center gap-12 w-full max-w-3xl">
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary-gold">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-brand-primary">
             Happy customers!!
           </h3>
           <div className="flex flex-col sm:flex-row w-full gap-4 justify-center items-center sm:items-stretch">

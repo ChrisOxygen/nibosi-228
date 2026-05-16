@@ -22,14 +22,14 @@ function FAQItem({
       >
         <span
           className={`font-heading text-base sm:text-xl font-semibold transition-colors duration-300 ${
-            isOpen ? "text-white" : "text-primary-gold"
+            isOpen ? "text-white" : "text-brand-primary"
           }`}
         >
           {faq.question}
         </span>
         <span
           className={`ml-4 shrink-0 transition-colors duration-300 ${
-            isOpen ? "text-white" : "text-primary-gold"
+            isOpen ? "text-white" : "text-brand-primary"
           }`}
         >
           {isOpen ? <FaMinus size={16} /> : <FaPlus size={16} />}
@@ -41,7 +41,7 @@ function FAQItem({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="border-t border-primary-gold px-4 py-4 text-lg text-white bg-brand-surface">
+          <p className="border-t border-brand-primary px-4 py-4 text-lg text-white bg-brand-surface">
             {faq.answer}
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function FAQ() {
     <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col sm:items-center gap-2">
-          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold sm:text-center">
+          <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-primary sm:text-center">
             {COPY.FAQ_HEADING}
           </h2>
           <span className="text-lg sm:text-center font-semibold">

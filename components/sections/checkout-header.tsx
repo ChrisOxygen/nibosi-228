@@ -11,7 +11,7 @@ export default function CheckoutHeader() {
       <div className="max-w-6xl mx-auto flex flex-col gap-10 items-center">
         <div className="relative z-10 flex flex-col items-center">
           <div className="flex flex-col items-center gap-2">
-            <h2 className="font-semibold text-3xl sm:text-4xl lg:text-6xl text-primary-gold text-center">
+            <h2 className="font-semibold text-3xl sm:text-4xl lg:text-6xl text-brand-primary text-center">
               {COPY.CHECKOUT_HEADING}
             </h2>
             <span className="text-base sm:text-lg lg:text-2xl text-center max-w-4xl font-semibold italic px-4">

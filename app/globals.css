@@ -6,9 +6,9 @@
 
 @theme inline {
   /* Brand palette — change these to re-skin the entire app */
-  --color-primary-gold: #d4af37;
-  --color-gold-light: #f5d060;
-  --color-gold-dark: #b8860b;
+  --color-brand-primary: #d4af37;
+  --color-brand-primary-light: #f5d060;
+  --color-brand-primary-dark: #b8860b;
   --color-brand-dark: #1b1c1d;
   --color-brand-surface: #272724;
   --color-brand-muted: #808080;
@@ -195,11 +195,11 @@
   .gold-cta {
     background: linear-gradient(
       135deg,
-      var(--color-gold-light) 0%,
-      var(--color-primary-gold) 25%,
-      var(--color-gold-dark) 50%,
-      var(--color-primary-gold) 75%,
-      var(--color-gold-light) 100%
+      var(--color-brand-primary-light) 0%,
+      var(--color-brand-primary) 25%,
+      var(--color-brand-primary-dark) 50%,
+      var(--color-brand-primary) 75%,
+      var(--color-brand-primary-light) 100%
     );
     background-size: 300% 300%;
     animation: gold-shift 4s ease infinite;
@@ -210,7 +210,7 @@
 
   .gold-cta:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-primary-gold) 40%, transparent);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-brand-primary) 40%, transparent);
   }
 
   .whatsapp-pulse {

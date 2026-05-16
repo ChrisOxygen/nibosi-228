@@ -8,7 +8,7 @@ export default function ProductPricing() {
     <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-8 w-full max-w-3xl">
-          <div className="p-1 flex w-full gap-1 items-stretch bg-primary-gold">
+          <div className="p-1 flex w-full gap-1 items-stretch bg-brand-primary">
             <Image
               alt={PRODUCT.WATCH_NAME}
               src={PRODUCT_IMAGES.WATCH_PRICING}

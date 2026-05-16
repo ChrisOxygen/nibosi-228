@@ -30,7 +30,7 @@ function GoldLabel({
   return (
     <Label
       htmlFor={htmlFor}
-      className="text-primary-gold font-heading font-semibold text-sm"
+      className="text-brand-primary font-heading font-semibold text-sm"
     >
       {children}
     </Label>
@@ -43,7 +43,7 @@ function FieldError({ message }: { message?: string }) {
 }
 
 const INPUT_CLASS =
-  "border-primary-gold/60 focus-visible:border-primary-gold bg-transparent text-white h-10";
+  "border-brand-primary/60 focus-visible:border-brand-primary bg-transparent text-white h-10";
 
 function isSameData(a: CheckoutFormValues, b: CheckoutFormValues) {
   const keys: (keyof CheckoutFormValues)[] = [
@@ -98,7 +98,7 @@ export default function CheckoutForm() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-8  items-start">
         {/* Left — product summary, sticky on lg+ */}
         <div className="flex flex-col justify-self-center w-full max-w-2xl lg:max-w-full gap-6 lg:sticky lg:top-8">
-          <div className="p-1 flex w-full gap-1 items-stretch bg-primary-gold">
+          <div className="p-1 flex w-full gap-1 items-stretch bg-brand-primary">
             <Image
               alt={PRODUCT.WATCH_NAME}
               src={PRODUCT_IMAGES.WATCH_PRICING}
@@ -115,7 +115,7 @@ export default function CheckoutForm() {
             />
           </div>
 
-          <h2 className="font-heading font-semibold text-2xl sm:text-3xl text-primary-gold text-center">
+          <h2 className="font-heading font-semibold text-2xl sm:text-3xl text-brand-primary text-center">
             {COPY.PACKAGE_HEADING}
           </h2>
 
@@ -137,7 +137,7 @@ export default function CheckoutForm() {
             <p className="font-heading font-semibold text-xl sm:text-2xl text-brand-muted line-through">
               Total Value: {formatNaira(PRICING.ORIGINAL)}
             </p>
-            <p className="font-heading font-semibold text-3xl sm:text-4xl text-primary-gold text-center">
+            <p className="font-heading font-semibold text-3xl sm:text-4xl text-brand-primary text-center">
               Order Today : {formatNaira(PRICING.OFFER)}
             </p>
           </div>
@@ -209,7 +209,7 @@ export default function CheckoutForm() {
                       >
                         <RadioGroupItem
                           value={opt.value}
-                          className="border-primary-gold/60 data-checked:border-primary-gold data-checked:bg-primary-gold shrink-0"
+                          className="border-brand-primary/60 data-checked:border-brand-primary data-checked:bg-brand-primary shrink-0"
                         />
                         {opt.label}
                       </label>
@@ -239,7 +239,7 @@ export default function CheckoutForm() {
                 id="deliveryAddress"
                 rows={4}
                 {...register("deliveryAddress")}
-                className="border-primary-gold/60 focus-visible:border-primary-gold bg-transparent text-white min-h-[100px]"
+                className="border-brand-primary/60 focus-visible:border-brand-primary bg-transparent text-white min-h-[100px]"
               />
               <FieldError message={errors.deliveryAddress?.message} />
             </FieldWrapper>

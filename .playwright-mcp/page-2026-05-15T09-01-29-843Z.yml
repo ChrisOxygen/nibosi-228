@@ -1,0 +1,67 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e8]:
+      - heading "Enter your delivery details" [level=2] [ref=e9]
+      - generic [ref=e10]: Please be sure you are FULLY Ready for the Product and have the Money to Pay at the Point of Delivery , because we spend alot of Money on advertisement, logistics and delivery to your location!!
+    - generic [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - img "Nibosi Ruby Prestige Day-Date Watch" [ref=e15]
+          - img "Golden Dynasty Premium Bracelet" [ref=e16]
+        - heading "Your Package Includes" [level=2] [ref=e17]
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20]: Nibosi Ruby Prestige Day-Date Watch
+            - generic [ref=e22]: ₦63,000
+          - generic [ref=e23]:
+            - generic [ref=e24]: Golden Dynasty Premium Bracelet
+            - generic [ref=e26]: ₦15,500
+          - generic [ref=e27]:
+            - generic [ref=e28]: Delivery in Lagos(FREE)
+            - generic [ref=e30]: ₦5,000
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: "Total Value: ₦88,500"
+          - paragraph [ref=e33]: "Order Today : ₦60,000"
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: First Name
+          - textbox "First Name" [ref=e38]
+        - generic [ref=e39]:
+          - generic [ref=e40]: Last Name
+          - textbox "Last Name" [ref=e41]
+        - generic [ref=e42]:
+          - generic [ref=e43]: Main Phone Number
+          - textbox "Main Phone Number" [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e46]: Alternative Phone Number
+          - textbox "Alternative Phone Number" [ref=e47]
+        - generic [ref=e48]:
+          - generic [ref=e49]: Choose quantity
+          - radiogroup [ref=e50]:
+            - generic [ref=e51] [cursor=pointer]:
+              - radio [checked] [ref=e52]
+              - radio [checked] [ref=e55]
+              - text: 1 Nibosi Ruby Prestige watch +FREE Gold bracelet = ₦60,000
+            - generic [ref=e56] [cursor=pointer]:
+              - radio [ref=e57]
+              - radio [ref=e58]
+              - text: 2 Nibosi Ruby Prestige watch +FREE Gold bracelet = ₦120,000
+        - generic [ref=e59]:
+          - generic [ref=e60]: Email
+          - textbox "Email" [ref=e61]
+        - generic [ref=e62]:
+          - generic [ref=e63]: Delivery Address
+          - textbox "Delivery Address" [ref=e64]
+        - generic [ref=e65]:
+          - generic [ref=e66]: State
+          - textbox "State" [ref=e67]
+        - generic [ref=e68]:
+          - generic [ref=e69]: Local Government
+          - textbox "Local Government" [ref=e70]
+        - button "Place Your Order!!" [ref=e71] [cursor=pointer]
+  - contentinfo [ref=e72]:
+    - generic [ref=e75]:
+      - paragraph [ref=e76]: © Copyright 2025 VeluxGrayFashion.com All rights reserved
+      - paragraph [ref=e77]: This website Is Not A Part Of The Facebook Website Or Facebook Inc. FACEBOOK Is A Trademark Of FACEBOOK, Inc.
+  - button "Open Next.js Dev Tools" [ref=e83] [cursor=pointer]:
+    - img [ref=e84]
