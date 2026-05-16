@@ -5,7 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Brand palette — change these to re-skin the entire app */
   --color-primary-gold: #d4af37;
+  --color-gold-light: #f5d060;
+  --color-gold-dark: #b8860b;
+  --color-brand-dark: #1b1c1d;
+  --color-brand-surface: #272724;
+  --color-brand-muted: #808080;
+  --color-whatsapp: #25d366;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
@@ -167,11 +175,11 @@
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-whatsapp) 55%, transparent);
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 12px color-mix(in srgb, var(--color-whatsapp) 0%, transparent);
   }
 }
 
@@ -187,11 +195,11 @@
   .gold-cta {
     background: linear-gradient(
       135deg,
-      #f5d060 0%,
-      #d4af37 25%,
-      #b8860b 50%,
-      #d4af37 75%,
-      #f5d060 100%
+      var(--color-gold-light) 0%,
+      var(--color-primary-gold) 25%,
+      var(--color-gold-dark) 50%,
+      var(--color-primary-gold) 75%,
+      var(--color-gold-light) 100%
     );
     background-size: 300% 300%;
     animation: gold-shift 4s ease infinite;
@@ -200,12 +208,16 @@
       box-shadow 0.25s ease;
   }
 
+  .gold-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-primary-gold) 40%, transparent);
+  }
+
   .whatsapp-pulse {
     animation: whatsapp-pulse 1.6s ease-in-out infinite;
   }
 
-  .gold-cta:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px oklch(0.7 0.15 85 / 40%);
+  .whatsapp-pulse:hover {
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--color-whatsapp) 45%, transparent);
   }
 }

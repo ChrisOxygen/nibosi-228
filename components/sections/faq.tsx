@@ -41,7 +41,7 @@ function FAQItem({
         }`}
       >
         <div className="overflow-hidden">
-          <p className="border-t border-primary-gold px-4 py-4 text-lg text-white bg-[#272724]">
+          <p className="border-t border-primary-gold px-4 py-4 text-lg text-white bg-brand-surface">
             {faq.answer}
           </p>
         </div>
@@ -73,7 +73,7 @@ function FAQList({ faqs }: { faqs: FAQ[] }) {
 
 export default function FAQ() {
   return (
-    <section className="section-y-p bg-[#1B1C1D]">
+    <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col sm:items-center gap-2">
           <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold sm:text-center">

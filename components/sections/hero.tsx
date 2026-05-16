@@ -13,7 +13,7 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to top, #1B1C1D 0%, #1B1C1D 50%, transparent 51%)",
+            "linear-gradient(to top, var(--color-brand-dark) 0%, var(--color-brand-dark) 50%, transparent 51%)",
         }}
       />
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex items-center flex-col gap-8">

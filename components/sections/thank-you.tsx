@@ -78,7 +78,7 @@ export default function ThankYou() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="whatsapp-pulse group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-[#25D366] px-6 py-6 text-white hover:shadow-[0_12px_40px_rgba(37,211,102,0.45)]"
+          className="whatsapp-pulse group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-whatsapp px-6 py-6 text-white"
         >
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none" />
           <FaWhatsapp className="text-4xl sm:text-6xl shrink-0" />

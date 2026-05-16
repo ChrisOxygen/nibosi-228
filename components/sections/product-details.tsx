@@ -57,7 +57,7 @@ function WatchDetails() {
         </h2>
         <span className="font-semibold">{PRODUCT.WATCH_TAGLINE}</span>
       </div>
-      <div className="flex p-2 w-full bg-[#272724]">
+      <div className="flex p-2 w-full bg-brand-surface">
         <ul className="flex gap-3 flex-col">
           {WATCH_FEATURES.map((feature) => (
             <li key={feature} className="flex gap-4 sm:items-center">
@@ -75,7 +75,7 @@ function WatchDetails() {
 
 function BraceletDetails() {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 w-full border-3 bg-[#272724] border-primary-gold p-4">
+    <div className="flex flex-col sm:flex-row gap-4 w-full border-3 bg-brand-surface border-primary-gold p-4">
       <Image
         alt={PRODUCT.BRACELET_NAME}
         src={PRODUCT_IMAGES.BRACELET}
@@ -100,7 +100,7 @@ function BraceletDetails() {
 
 export default function ProductDetails() {
   return (
-    <section className="section-y-p bg-[#1B1C1D]">
+    <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10">
         <div className="flex flex-col sm:items-center gap-2">
           <h2 className="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-gold sm:text-center">

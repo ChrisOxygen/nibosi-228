@@ -5,7 +5,7 @@ import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
 
 export default function ProductPricing() {
   return (
-    <section className="section-y-p bg-[#1B1C1D]">
+    <section className="section-y-p bg-brand-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-8 w-full max-w-3xl">
           <div className="p-1 flex w-full gap-1 items-stretch bg-primary-gold">

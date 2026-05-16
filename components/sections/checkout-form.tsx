@@ -134,7 +134,7 @@ export default function CheckoutForm() {
           </div>
 
           <div className="flex flex-col items-center gap-2">
-            <p className="font-heading font-semibold text-xl sm:text-2xl text-[#808080] line-through">
+            <p className="font-heading font-semibold text-xl sm:text-2xl text-brand-muted line-through">
               Total Value: {formatNaira(PRICING.ORIGINAL)}
             </p>
             <p className="font-heading font-semibold text-3xl sm:text-4xl text-primary-gold text-center">
@@ -144,7 +144,7 @@ export default function CheckoutForm() {
         </div>
 
         {/* Right — form */}
-        <div className="bg-[#272724] max-w-3xl w-full lg:max-w-full justify-self-center rounded p-4 sm:p-6 flex flex-col gap-5">
+        <div className="bg-brand-surface max-w-3xl w-full lg:max-w-full justify-self-center rounded p-4 sm:p-6 flex flex-col gap-5">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col gap-5"
