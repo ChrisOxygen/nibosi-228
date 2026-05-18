@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Nibosi Ruby Prestige | Premium Watch & Bracelet Set",
   description:
     "Command every moment with the Nibosi Ruby Prestige Day-Date Watch and Golden Dynasty Bracelet. Free delivery in Lagos. Pay on delivery.",
+  icons: {
+    icon: "/assets/white-on-black-bg-icon.png",
+  },
 };
 
 export default function RootLayout({
