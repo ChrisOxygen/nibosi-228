@@ -88,11 +88,15 @@ export default function CheckoutForm() {
         router.push("/thank-you");
         return;
       }
-      await fetch("http://localhost:3000/webhooks/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, sku: "nibosi-2628" }),
-      });
+      try {
+        await fetch(process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL!, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...data, sku: "nibosi-2628" }),
+        });
+      } catch {
+        // non-blocking — proceed even if webhook fails
+      }
       setOrder(data);
       router.push("/thank-you");
     });
