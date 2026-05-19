@@ -83,11 +83,16 @@ export default function CheckoutForm() {
   }, [orderData, reset]);
 
   function onSubmit(data: CheckoutFormValues) {
-    startTransition(() => {
+    startTransition(async () => {
       if (orderData && isSameData(data, orderData)) {
         router.push("/thank-you");
         return;
       }
+      await fetch("http://localhost:3000/webhooks/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...data, sku: "nibosi-2628" }),
+      });
       setOrder(data);
       router.push("/thank-you");
     });
