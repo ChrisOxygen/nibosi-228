@@ -113,14 +113,31 @@ export default function CheckoutForm() {
         const res = await fetch(process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL!, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...data, sku: "nibosi-2628" }),
+          body: JSON.stringify({
+            sku: "nibosi-2628",
+            firstName: data.firstName,
+            lastName: data.lastName || undefined,
+            mainPhone: data.mainPhone,
+            altPhone: data.altPhone || undefined,
+            quantity: data.quantity,
+            email: data.email || undefined,
+            deliveryAddress: data.deliveryAddress || undefined,
+            state: data.state || undefined,
+          }),
         });
         if (!res.ok) {
           const payload = await res.json().catch(() => null);
+          const code = payload?.error?.code as string | undefined;
           const message =
-            payload?.message ?? payload?.error ?? "Something went wrong. Please try again.";
+            code === "bad_request"
+              ? "It looks like you've already placed this order. We'll be in touch with you soon!"
+              : code === "not_found"
+                ? "This product is currently unavailable. Please contact us directly."
+                : code === "validation_error"
+                  ? "Some of your details look incorrect. Please review and try again."
+                  : "Something went wrong on our end. Please try again in a moment.";
           ph?.capture(EVENTS.CHECKOUT_ERROR, {
-            error_message: message,
+            error_code: code,
             status: res.status,
             is_network_error: false,
           });
