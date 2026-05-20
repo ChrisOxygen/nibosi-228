@@ -29,6 +29,8 @@ function WatchDetails() {
                   src={src}
                   width={1000}
                   height={1000}
+                  sizes="100vw"
+                  loading="lazy"
                   className="w-full object-cover"
                 />
               </CarouselItem>
@@ -46,6 +48,8 @@ function WatchDetails() {
             src={src}
             width={1000}
             height={1000}
+            sizes="33vw"
+            loading="lazy"
             className="basis-1/3 w-[200px] object-cover"
           />
         ))}
@@ -81,6 +85,8 @@ function BraceletDetails() {
         src={PRODUCT_IMAGES.BRACELET}
         width={1000}
         height={1000}
+        sizes="(max-width: 640px) 100vw, 25vw"
+        loading="lazy"
         className="w-full sm:basis-1/4 sm:w-auto h-[300px] sm:h-[210px] object-cover"
       />
       <div className="flex flex-col gap-2 justify-center">

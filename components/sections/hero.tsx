@@ -30,6 +30,8 @@ export default function Hero() {
           src={PRODUCT_IMAGES.HERO}
           width={2000}
           height={2000}
+          priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 80vw, 1200px"
           className="rounded aspect-square sm:aspect-video object-cover"
         />
       </div>
