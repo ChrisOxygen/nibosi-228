@@ -3,19 +3,24 @@
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { usePostHog } from "posthog-js/react";
 import { Spinner } from "@/components/ui/spinner";
 import { PRICING, formatNaira } from "@/constants/pricing";
+import { EVENTS } from "@/lib/posthog";
 
 type Props = {
   variant?: "hero" | "default";
+  location?: string;
 };
 
-export default function PricingCTA({ variant = "default" }: Props) {
+export default function PricingCTA({ variant = "default", location = "unknown" }: Props) {
   const isHero = variant === "hero";
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const ph = usePostHog();
 
   function handleClick() {
+    ph?.capture(EVENTS.CTA_CLICKED, { variant, location });
     startTransition(() => {
       router.push("/checkout");
     });

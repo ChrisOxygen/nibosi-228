@@ -32,7 +32,7 @@ export default function Testimonials() {
               />
             ))}
           </div>
-          <PricingTotals />
+          <PricingTotals location="testimonials" />
         </div>
       </div>
     </section>

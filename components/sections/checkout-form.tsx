@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useTransition, useState } from "react";
+import { useEffect, useTransition, useState, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { usePostHog } from "posthog-js/react";
 import { useOrderStore } from "@/store/order";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,6 +16,7 @@ import { PRICING, formatNaira, LINE_ITEMS } from "@/constants/pricing";
 import { PRODUCT, PRODUCT_IMAGES } from "@/constants/product";
 import { COPY, QUANTITY_OPTIONS } from "@/constants/copy";
 import { checkoutSchema, type CheckoutFormValues } from "@/validators/checkout";
+import { EVENTS } from "@/lib/posthog";
 
 function FieldWrapper({ children }: { children: React.ReactNode }) {
   return <div className="flex flex-col gap-1.5">{children}</div>;
@@ -65,6 +67,8 @@ export default function CheckoutForm() {
   const orderData = useOrderStore((s) => s.orderData);
   const [isPending, startTransition] = useTransition();
   const [webhookError, setWebhookError] = useState<string | null>(null);
+  const ph = usePostHog();
+  const hasStarted = useRef(false);
 
   const {
     register,
@@ -83,13 +87,28 @@ export default function CheckoutForm() {
     }
   }, [orderData, reset]);
 
+  function trackStart() {
+    if (hasStarted.current) return;
+    hasStarted.current = true;
+    ph?.capture(EVENTS.CHECKOUT_STARTED);
+  }
+
   function onSubmit(data: CheckoutFormValues) {
     setWebhookError(null);
     startTransition(async () => {
       if (orderData && isSameData(data, orderData)) {
+        ph?.capture(EVENTS.CHECKOUT_DUPLICATE_SKIPPED);
         router.push("/thank-you");
         return;
       }
+
+      ph?.capture(EVENTS.CHECKOUT_SUBMITTED, {
+        quantity: data.quantity,
+        has_email: !!data.email,
+        has_alt_phone: !!data.altPhone,
+        has_state: !!data.state,
+      });
+
       try {
         const res = await fetch(process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL!, {
           method: "POST",
@@ -100,13 +119,25 @@ export default function CheckoutForm() {
           const payload = await res.json().catch(() => null);
           const message =
             payload?.message ?? payload?.error ?? "Something went wrong. Please try again.";
+          ph?.capture(EVENTS.CHECKOUT_ERROR, {
+            error_message: message,
+            status: res.status,
+            is_network_error: false,
+          });
           setWebhookError(message);
           return;
         }
-      } catch {
-        setWebhookError("Network error — please check your connection and try again.");
+      } catch (err) {
+        const message = "Network error — please check your connection and try again.";
+        ph?.capture(EVENTS.CHECKOUT_ERROR, {
+          error_message: String(err),
+          is_network_error: true,
+        });
+        setWebhookError(message);
         return;
       }
+
+      ph?.capture(EVENTS.CHECKOUT_SUCCESS, { quantity: data.quantity });
       setOrder(data);
       router.push("/thank-you");
     });
@@ -166,6 +197,7 @@ export default function CheckoutForm() {
         <div className="bg-brand-surface max-w-3xl w-full lg:max-w-full justify-self-center rounded p-4 sm:p-6 flex flex-col gap-5">
           <form
             onSubmit={handleSubmit(onSubmit)}
+            onFocus={trackStart}
             className="flex flex-col gap-5"
           >
             <FieldWrapper>
@@ -218,7 +250,10 @@ export default function CheckoutForm() {
                 render={({ field }) => (
                   <RadioGroup
                     value={field.value}
-                    onValueChange={field.onChange}
+                    onValueChange={(v) => {
+                      field.onChange(v);
+                      ph?.capture(EVENTS.CHECKOUT_QUANTITY_SELECTED, { quantity: v });
+                    }}
                     className="gap-2"
                   >
                     {QUANTITY_OPTIONS.map((opt) => (

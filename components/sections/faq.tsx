@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { usePostHog } from "posthog-js/react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { FAQS, type FAQ } from "@/constants/faqs";
 import { COPY } from "@/constants/copy";
+import { EVENTS } from "@/lib/posthog";
 
 function FAQItem({
   faq,
@@ -52,9 +54,15 @@ function FAQItem({
 
 function FAQList({ faqs }: { faqs: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const ph = usePostHog();
 
   const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    const isOpening = openIndex !== index;
+    ph?.capture(isOpening ? EVENTS.FAQ_OPENED : EVENTS.FAQ_CLOSED, {
+      question: faqs[index].question,
+      index,
+    });
+    setOpenIndex(isOpening ? index : null);
   };
 
   return (

@@ -13,7 +13,7 @@ export default function PayOnDelivery() {
             {PRODUCT.PAY_ON_DELIVERY_SUBTITLE}
           </span>
         </div>
-        <PricingTotals />
+        <PricingTotals location="pay_on_delivery" />
       </div>
     </section>
   );

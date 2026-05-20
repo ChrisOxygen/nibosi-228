@@ -1,10 +1,13 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
+import { usePostHog } from "posthog-js/react";
 import { useOrderStore } from "@/store/order";
 import { PRODUCT, WHATSAPP_LINK } from "@/constants/product";
 import { COPY } from "@/constants/copy";
 import { FaWhatsapp } from "react-icons/fa";
+import { EVENTS } from "@/lib/posthog";
 
 function GoldRule() {
   return (
@@ -21,6 +24,11 @@ function GoldRule() {
 export default function ThankYou() {
   const firstName = useOrderStore((s) => s.firstName);
   const displayName = firstName || "Friend";
+  const ph = usePostHog();
+
+  useEffect(() => {
+    ph?.capture(EVENTS.THANK_YOU_VIEWED, { has_first_name: !!firstName });
+  }, [ph, firstName]);
 
   return (
     <div
@@ -78,6 +86,7 @@ export default function ThankYou() {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => ph?.capture(EVENTS.WHATSAPP_CTA_CLICKED)}
           className="whatsapp-pulse group relative overflow-hidden rounded flex items-center justify-center gap-4 bg-whatsapp px-6 py-6 text-white"
         >
           <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent skew-x-12 pointer-events-none" />

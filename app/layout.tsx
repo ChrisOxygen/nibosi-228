@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { PurchaseToast } from "@/components/purchase-toast";
+import { PostHogProvider } from "@/components/providers/posthog-provider";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -38,10 +39,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        {children}
-        <Footer />
-        <Toaster position="bottom-left" />
-        <PurchaseToast />
+        <PostHogProvider>
+          {children}
+          <Footer />
+          <Toaster position="bottom-left" />
+          <PurchaseToast />
+        </PostHogProvider>
       </body>
     </html>
   );

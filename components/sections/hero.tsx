@@ -24,7 +24,7 @@ export default function Hero() {
           {PRODUCT.SUBTITLE}
         </p>
         <CountdownTimer />
-        <PricingCTA variant="hero" />
+        <PricingCTA variant="hero" location="hero" />
         <Image
           alt={PRODUCT.NAME}
           src={PRODUCT_IMAGES.HERO}

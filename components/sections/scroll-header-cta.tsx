@@ -2,10 +2,12 @@
 
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
+import { usePostHog } from "posthog-js/react";
 import { Button } from "../ui/button";
 import { Spinner } from "@/components/ui/spinner";
 import { FaGripLinesVertical } from "react-icons/fa6";
 import { COPY } from "@/constants/copy";
+import { EVENTS } from "@/lib/posthog";
 
 const MarqueeItem = () => (
   <div className="flex items-center">
@@ -27,8 +29,10 @@ const MarqueeItem = () => (
 export default function ScrollHeaderCTA() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const ph = usePostHog();
 
   function handleOrder() {
+    ph?.capture(EVENTS.CTA_CLICKED, { location: "scroll_header" });
     startTransition(() => {
       router.push("/checkout");
     });
