@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useTransition } from "react";
+import { useEffect, useTransition, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -64,6 +64,7 @@ export default function CheckoutForm() {
   const setOrder = useOrderStore((s) => s.setOrder);
   const orderData = useOrderStore((s) => s.orderData);
   const [isPending, startTransition] = useTransition();
+  const [webhookError, setWebhookError] = useState<string | null>(null);
 
   const {
     register,
@@ -83,19 +84,28 @@ export default function CheckoutForm() {
   }, [orderData, reset]);
 
   function onSubmit(data: CheckoutFormValues) {
+    setWebhookError(null);
     startTransition(async () => {
       if (orderData && isSameData(data, orderData)) {
         router.push("/thank-you");
         return;
       }
       try {
-        await fetch(process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL!, {
+        const res = await fetch(process.env.NEXT_PUBLIC_LEAD_WEBHOOK_URL!, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...data, sku: "nibosi-2628" }),
         });
+        if (!res.ok) {
+          const payload = await res.json().catch(() => null);
+          const message =
+            payload?.message ?? payload?.error ?? "Something went wrong. Please try again.";
+          setWebhookError(message);
+          return;
+        }
       } catch {
-        // non-blocking — proceed even if webhook fails
+        setWebhookError("Network error — please check your connection and try again.");
+        return;
       }
       setOrder(data);
       router.push("/thank-you");
@@ -262,6 +272,12 @@ export default function CheckoutForm() {
               />
               <FieldError message={errors.state?.message} />
             </FieldWrapper>
+
+            {webhookError && (
+              <div className="rounded border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+                {webhookError}
+              </div>
+            )}
 
             <button
               type="submit"
