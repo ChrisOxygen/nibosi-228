@@ -109,7 +109,7 @@ export function PurchaseToast() {
 
     const timeoutId = setTimeout(() => {
       firePurchaseToast();
-      intervalId = setInterval(firePurchaseToast, 12000);
+      intervalId = setInterval(firePurchaseToast, 14000);
     }, 4000);
 
     return () => {

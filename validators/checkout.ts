@@ -10,7 +10,7 @@ export const checkoutSchema = z.object({
   altPhone: z.string().optional(),
   quantity: z.enum(["1", "2"]).optional(),
   email: z.string().email("Enter a valid email address").optional().or(z.literal("")),
-  deliveryAddress: z.string().min(5, "Enter your full delivery address"),
+  deliveryAddress: z.string().min(5, "Enter your full delivery address").optional(),
   state: z.string().optional(),
 });
 
