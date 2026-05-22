@@ -2,8 +2,8 @@ import { PRODUCT } from "@/constants/product";
 
 export const PRICING = {
   ORIGINAL: 88500,
-  OFFER: 60000,
-  SAVINGS: 28500,
+  OFFER: 70000,
+  SAVINGS: 18500,
   WATCH: 63000,
   BRACELET: 15500,
   DELIVERY: 5000,
